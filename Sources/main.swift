@@ -5,7 +5,6 @@ import Darwin
 #endif
 import Curassow
 import Inquiline
-import Jokes
 
 serve { request in
   if request.path == "/joke" {
