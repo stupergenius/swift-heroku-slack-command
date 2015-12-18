@@ -4,6 +4,7 @@ import Glibc
 import Darwin
 #endif
 
+// Array sample from http://stackoverflow.com/a/24101606
 extension Array {
     func sample() -> Element {
         let randomIndex = Int(rand()) % count
