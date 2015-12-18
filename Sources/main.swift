@@ -1,8 +1,15 @@
+#if os(Linux)
 import Glibc
-import Inquiline
+#else
+import Darwin
+#endif
 import Curassow
+import Inquiline
 
-
-serve { _ in
-  return Response(.Ok, contentType: "text/plain", body: "Hello World")
+serve { request in
+  if request.path == "/joke" {
+    return Response(.Ok, contentType: "text/plain", body: "A duck walks into a bar...")
+  } else {
+    return Response(.NotFound, contentType: "text/plain", body: "Not Found")
+  }
 }
