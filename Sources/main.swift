@@ -1,10 +1,12 @@
 import Glibc
 import Curassow
 import Inquiline
+import Jokes
 
 serve { request in
   if request.path == "/joke" {
-    return Response(.Ok, contentType: "text/plain", body: "A duck walks into a bar...")
+    joke = Joke.tell()
+    return Response(.Ok, contentType: "text/plain", body: joke.content)
   } else {
     return Response(.NotFound, contentType: "text/plain", body: "Not Found")
   }
