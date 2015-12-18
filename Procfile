@@ -1,1 +1,1 @@
-web: SwiftJokeCommand --workers 4 --bind 0.0.0.0:$PORT
+web: SlackJokeCommand --workers 4 --bind 0.0.0.0:$PORT
