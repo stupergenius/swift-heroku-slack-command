@@ -1,4 +1,8 @@
+#if os(Linux)
 import Glibc
+#else
+import Darwin
+#endif
 import Curassow
 import Inquiline
 import Jokes

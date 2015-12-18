@@ -1,4 +1,8 @@
+#if os(Linux)
 import Glibc
+#else
+import Darwin
+#endif
 
 extension Array {
     func sample() -> Element {
