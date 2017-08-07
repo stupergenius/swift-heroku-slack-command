@@ -7,7 +7,11 @@ import Darwin
 // Array sample from http://stackoverflow.com/a/24101606
 extension Array {
     func sample() -> Element {
+        #if os(Linux)
         let randomIndex = Int(rand()) % count
+        #else
+        let randomIndex = Int(arc4random_uniform(UInt32(count)))
+        #endif
         return self[randomIndex]
     }
 }
